@@ -6,12 +6,12 @@ let addTitulo = document.querySelector("#add");
 let contador = 0;
 
 function addTarefa() {
-  let inputValue = input.value;
+    let inputValue = input.value;
 
-  ++contador;
+    ++contador;
 
-  if (inputValue !== "" && inputValue !== null && inputValue !== undefined) {
-    let newItem = `<div id="${contador}" class="item" onclick="tarefaFeita(${contador})" >
+    if (inputValue !== "" && inputValue !== null && inputValue !== undefined) {
+        let newItem = `<div id="${contador}" class="item" onclick="tarefaFeita(${contador})" >
             <div id="item-icone">
                 <span id="${contador}" class="material-icons">
                        task_alt
@@ -29,24 +29,24 @@ function addTarefa() {
             </div>
         </div>`;
 
-    main.innerHTML += newItem;
-    input.value = "";
-    input.focus();
-  }
+        main.innerHTML += newItem;
+        input.value = "";
+        input.focus();
+    }
 }
 
 input.addEventListener("keyup", function (event) {
-  if (event.keyCode === 13) {
-    addTarefa();
-  }
+    if (event.keyCode === 13) {
+        addTarefa();
+    }
 });
 
 function removerTarefa(valor) {
-  let tarefaremover = document.getElementById(valor);
-  tarefaremover.remove();
+    let tarefaremover = document.getElementById(valor);
+    tarefaremover.remove();
 }
 
 function tarefaFeita(valor) {
-  let item = document.getElementById(valor);
-  item.classList.toggle("clicado");
+    let item = document.getElementById(valor);
+    item.classList.toggle("clicado");
 }
