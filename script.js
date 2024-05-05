@@ -12,7 +12,7 @@ function addTarefa() {
     let newItem = `<div id="${contador}" class="item">
             <div id="item-icone">
                 <span id="${contador}" class="material-icons" onclick="tarefaFeita(${contador})">
-                       task_alt
+                task_alt
                 </span>
             </div>
 
@@ -48,4 +48,5 @@ function removerTarefa(valor) {
 function tarefaFeita(valor) {
   let item = document.getElementById(valor);
   item.classList.toggle("clicado");
+  item.parentNode.appendChild(item);
 }
